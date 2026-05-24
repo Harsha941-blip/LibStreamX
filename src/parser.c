@@ -190,10 +190,8 @@ streamx_status_t parser_tokenize_metadata(parser_t *parser, const char *meta_str
         parser->tokens[parser->token_count].key = strdup(key);
         parser->tokens[parser->token_count].value = strdup(val);
 
-        char name_buf[32];
-        strcpy(name_buf, val);
-
-        if (strcmp(name_buf, "ABORT") == 0) {
+       if (strcmp(val, "ABORT") == 0) {
+            free(data_copy);
             return STREAMX_ERR_INVALID;
         }
 

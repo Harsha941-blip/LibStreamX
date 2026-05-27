@@ -31,8 +31,7 @@ streamx_status_t logger_init(const char *log_file) {
     return STREAMX_OK;
 }
 
-void logger_log(int level, const char *fmt, ...)
-{
+void logger_log(int level, const char *fmt, ...) {
     char buf[256];
     if (fmt == NULL) {
         return;
